@@ -1,0 +1,15 @@
+C:\Users\ytomo\pesho\bin\Debug\net6.0\pesho.exe
+C:\Users\ytomo\pesho\bin\Debug\net6.0\pesho.deps.json
+C:\Users\ytomo\pesho\bin\Debug\net6.0\pesho.runtimeconfig.json
+C:\Users\ytomo\pesho\bin\Debug\net6.0\pesho.dll
+C:\Users\ytomo\pesho\bin\Debug\net6.0\pesho.pdb
+C:\Users\ytomo\pesho\obj\Debug\net6.0\pesho.csproj.AssemblyReference.cache
+C:\Users\ytomo\pesho\obj\Debug\net6.0\pesho.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ytomo\pesho\obj\Debug\net6.0\pesho.AssemblyInfoInputs.cache
+C:\Users\ytomo\pesho\obj\Debug\net6.0\pesho.AssemblyInfo.cs
+C:\Users\ytomo\pesho\obj\Debug\net6.0\pesho.csproj.CoreCompileInputs.cache
+C:\Users\ytomo\pesho\obj\Debug\net6.0\pesho.dll
+C:\Users\ytomo\pesho\obj\Debug\net6.0\refint\pesho.dll
+C:\Users\ytomo\pesho\obj\Debug\net6.0\pesho.pdb
+C:\Users\ytomo\pesho\obj\Debug\net6.0\pesho.genruntimeconfig.cache
+C:\Users\ytomo\pesho\obj\Debug\net6.0\ref\pesho.dll
