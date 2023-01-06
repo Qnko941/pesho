@@ -7,50 +7,34 @@ namespace RealEstateTools
 {
     class Program
     {
- 
 
-        public class MirelaDownloader : IMirelaDownloader
+        private WeeklyReportDto GetData(DateOnly date)
         {
-            public string GetWeeklyStatistics(DateTime date)
+            IServiceProvider serviceProvider = null;
+            serviceProvider.Register<ICacheProvider, CacheProvider>();
+            serviceProvider.Register<IMirelaDownloader, MirelaDownloader>();
+
+
+
+
+
+
+            var dataFileName = date.ToString("yyyy-MM-dd") + ".json";
+            if (File.Exists(dataFileName))
             {
-                return "";
+                var content = File.ReadAllText(dataFileName);
+                return JsonSerializer.Deserialize<WeeklyReportDto>(content);
             }
-        }
-
-
-        public record class PricesRecord
-        {
-            public double Price1Total { get; set; }
-            public double Price1PerSquare { get; set; }
-            public double Price2 { get; set; }
-            public double Price3 { get; set; }
-        }
-
-        public record class WeeklyReportDto
-        {
-            public IDictionary<string, PricesRecord> Regions;
-        }
-
-
-
-        private WeeklyReportDto GetData(DateTime date)
-        {
-            // var dataFileName = date.ToString("yyyy-MM-dd") + ".json";
-            // if (File.Exists(dataFileName))
-            // {
-            //     var content = File.ReadAllText(dataFileName);
-            //     return JsonSerializer.Deserialize<WeeklyReportDto>(content);
-            // }
 
             var html = GetDataHtml(date);
             var result = Parse(html);
 
-            // var jsonContent = JsonSerializer.Deserialize(result);
-            // File.WriteAllText(dataFileName, jsonContent);
+            var jsonContent = JsonSerializer.Deserialize(result);
+            File.WriteAllText(dataFileName, jsonContent);
             return result;
         }
 
-        private string GetDataHtml(DateTime date)
+        static string GetDataHtml(DateOnly date)
         {
             var dataFileName = date.ToString("yyyy-MM-dd") + ".html";
             if (File.Exists(dataFileName))
@@ -87,13 +71,8 @@ namespace RealEstateTools
             Console.WriteLine(date);
 
             HttpResponseMessage response = client.GetAsync("https://www.mirela.bg/index.php?p=stats_list&price_type=1&type=1&etype=543&city_id=3&week=" + date).Result;
+            GetDataHtml(date);
 
-            if (response.IsSuccessStatusCode)
-            {
-                string result = response.Content.ReadAsStringAsync().Result;
-                List<string> regions = getAllRegions(result);
-                regions.ForEach(Console.WriteLine);
-            }
 
         }
 
