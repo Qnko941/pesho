@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ytomo\\pesho\\pesho.csproj": {}
+    "C:\\Users\\ytomo\\RealEstateApp\\RealEstateApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ytomo\\pesho\\pesho.csproj": {
+    "C:\\Users\\ytomo\\RealEstateApp\\RealEstateApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ytomo\\pesho\\pesho.csproj",
-        "projectName": "pesho",
-        "projectPath": "C:\\Users\\ytomo\\pesho\\pesho.csproj",
+        "projectUniqueName": "C:\\Users\\ytomo\\RealEstateApp\\RealEstateApp.csproj",
+        "projectName": "RealEstateApp",
+        "projectPath": "C:\\Users\\ytomo\\RealEstateApp\\RealEstateApp.csproj",
         "packagesPath": "C:\\Users\\ytomo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ytomo\\pesho\\obj\\",
+        "outputPath": "C:\\Users\\ytomo\\RealEstateApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ytomo\\AppData\\Roaming\\NuGet\\NuGet.Config",

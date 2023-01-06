@@ -1,4 +1,4 @@
-namespace RealEstateTools
+namespace RealEstateApp
 {
     public interface IMirelaDownloader
     {
