@@ -38,17 +38,25 @@ namespace RealEstateApp
             using var client = new HttpClient();
 
             DateOnly date = new DateOnly(2006, 01, 02);
+            DateOnly endDate = new DateOnly(2023, 01, 19);
             Console.WriteLine(date);
             MirelaDownloader mirelaDownloader = new MirelaDownloader();
 
 
+            List<IEnumerable<String>> allReports = new List<IEnumerable<String>>();
+            
+            while(date < endDate) {
             HttpResponseMessage response = client.GetAsync("https://www.mirela.bg/index.php?p=stats_list&price_type=1&type=1&etype=543&city_id=3&week=" + date).Result;
             var a = HtmlAgilityPackParse(mirelaDownloader.GetDataHtml(date));
-
-            foreach (var item in a)
-            {
-                Console.WriteLine(item);
+            var b = date.AddDays(7);
+            date = b;
+                allReports.Add(a);
             }
+
+            System.Console.WriteLine(allReports.Count());
+            //HttpResponseMessage response = client.GetAsync("https://www.mirela.bg/index.php?p=stats_list&price_type=1&type=1&etype=543&city_id=3&week=" + date).Result;
+            //var a = HtmlAgilityPackParse(mirelaDownloader.GetDataHtml(date));
+
 
         }
 
@@ -90,7 +98,6 @@ namespace RealEstateApp
         private static PricesRow ParsePricesRow(HtmlNode row)
         {
             var cells = row.ChildNodes;
-            System.Console.WriteLine(cells[0].InnerText);
             return new PricesRow
             {
                 Region = cells[0].InnerText,
