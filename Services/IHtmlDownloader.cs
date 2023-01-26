@@ -2,6 +2,6 @@ namespace RealEstateApp
 {
     interface IHtmlDownloader
     {
-        List<IEnumerable<String>> downloadAllHtmls();
+        List<IEnumerable<String>> DownloadAllHtmls();
     }
 }
